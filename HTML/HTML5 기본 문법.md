@@ -1,11 +1,9 @@
 1.HTML5 기본 문법
-
 HTML (HyperText Markup Language): 웹페이지를 기술하기 위한 마크업 언어. 조금 더 자세히 말하면 웹페이지의 내용(content)과 구조(structure)을 담당하는 언어로써 HTML 태그를 통해 정보를 구조화하는 것이다.
 - HTML5 문서는 반드시 <!DOCTYPE html>으로 시작하여 문서 형식(document type)을 HTML5로 지정
 - 실제적인 HTML document은 2행부터 시작되는데 <html>과 </html> 사이에 기술
 - <head>와 </head> 사이에는 document title, 외부 파일의 참조, 메타데이터의 설정 등이 위치하며 이 정보들은 브라우저에 표시되지 않음
 - 웹브라우저에 출력되는 모든 요소는 <body>와 </body> 사이에 위치
-
 요소(Element): 시작 태그(start tag)와 종료 태그(end tag) 그리고 태그 사이에 위치한 content로 구성
 요소의 중첩 (Nested Element): 요소는 다른 요소를 포함할 수 있다. 이때 부자관계가 성립된다. 이러한 부자관계로 정보를 구조화하는 것
 빈 요소(Empty Element): content를 가질 수 없는 요소를 빈 요소(Empty element or Self-Closing element)라 한다. 아래의 예와 같이 빈 요소는 content가 없으며(필요가 없다) 어트리뷰트(Attribute)만을 가질 수 있다.
@@ -116,3 +114,17 @@ button: 클릭할 수 있는 버튼을 생성, <input type="button">과 유사�
 type 어트리뷰트는 반드시 지정하는 것이 바람직하며 어트리뷰트값으로 button, reset, submit를 지정할 수 있다.
 button 태그는 어트리뷰트만을 받아들이는 input 태그와 달리 콘텐츠로 문자열은 물론 HTML 요소를 받을 수도 있다는 장점이 있다. 주의할 것은 IE의 경우, submit되는 값이 다를 수 있는 것이다.
 fieldset / legend: fieldset 태그는 관련된 입력 양식들을 그룹화할 때 사용한다. legend 태그는 fieldset 태그 내에서 사용되야 하며 그룹화된 fieldset의 제목을 정의한다.
+
+9. 웹페이지의 레이아웃을 구성하기 위해 공간을 분할하는 태그
+공간을 분할할 수 있는 태그는 div, span, table 등이 있는데, 과거에는 table 태그를 사용하여 레이아웃을 구성하기도 하였으나 모던 웹에서는 주로 div를 사용하여 레이아웃을 구성
+div 태그는 의미론적으로 어떠한 의미도 가지고 있지 않기 때문에 아래와 같이 HTML5에서 새롭게 추가된 시맨틱 태그를 사용하는 것이 더 나은 방법이나 IE에서 작동하지 않기 때문에 주의가 필요
+- header: 헤더를 의미한다
+- nav: 내비게이션을 의미한다
+- aside: 사이드에 위치하는 공간을 의미한다
+- section: 본문의 여러 내용(article)을 포함하는 공간을 의미한다
+- article: 분문의 주내용이 들어가는 공간을 의미한다
+- footer: 푸터를 의미한다
+이와 같은 공간 분할 태그는 일반적으로 다른 요소를 포함하는 컨테이너 역할을 하게 된다.
+div와 span의 차이는 block 레벨 요소와 inline 레벨 요소를 이해하여야 한다.
+
+
