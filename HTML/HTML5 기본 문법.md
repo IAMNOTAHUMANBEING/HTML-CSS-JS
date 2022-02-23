@@ -128,3 +128,4 @@ div 태그는 의미론적으로 어떠한 의미도 가지고 있지 않기 때
 div와 span의 차이는 block 레벨 요소와 inline 레벨 요소를 이해하여야 한다.
 
 
+![image](https://user-images.githubusercontent.com/60809568/155346257-17316b64-6342-4123-b7df-1e1d90c8dca6.png)
