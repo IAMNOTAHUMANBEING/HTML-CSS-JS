@@ -1,3 +1,5 @@
+출처: https://poiemaweb.com/
+
 1.HTML5 기본 문법
 HTML (HyperText Markup Language): 웹페이지를 기술하기 위한 마크업 언어. 조금 더 자세히 말하면 웹페이지의 내용(content)과 구조(structure)을 담당하는 언어로써 HTML 태그를 통해 정보를 구조화하는 것이다.
 - HTML5 문서는 반드시 <!DOCTYPE html>으로 시작하여 문서 형식(document type)을 HTML5로 지정
