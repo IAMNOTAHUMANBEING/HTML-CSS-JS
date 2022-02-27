@@ -693,3 +693,45 @@ align-items 속성(flex container속성으로 flex item을 flex container의 수
 5. Flexbox playground
 (https://codepen.io/enxaneta/full/adLPwv)
 
+21. 수평/수직 중앙 정렬
+1. 수평 정렬(Horizontal Align)
+1.1 inline/inline-block 요소
+정렬 대상 요소(텍스트 또는 링크 등의 inline 레벨 요소 또는 inline-block 레벨 요소)의 부모 요소에 text-align: center;를 지정한다.
+1.2 block 요소
+정렬 대상 요소에 너비를 명시적으로 지정하고 margin-right와 margin-left 프로퍼티에 auto를 지정한다.
+정렬 대상 요소에 너비를 명시적으로 지정하지 않으면 너비는 full width가 되므로 중앙 정렬이 필요없다.
+1.3 복수의 block 요소
+복수의 block 요소는 기본적으로 수직 정렬된다. 이것을 수평정렬하기 위해서는 정렬 대상 block 요소를 inline-block 요소로 변경한 후 부모 요소에 text-align: center;를 지정한다.
+정렬 대상 요소에 width를 지정하지 않으면 콘텐츠에 너비에 맞추어 너비가 결정되므로 명시적으로 너비를 지정한다.
+1.4 Flexbox
+flexbox를 사용할 수도 있다. 정렬 대상의 부모 요소에 아래의 룰셋을 선언한다.
+2. 수직 정렬(Vertical Align)
+2.1 inline/inline-block 요소
+2.1.1 Single line
+정렬 대상의 부모 요소에 padding-top과 padding-bottom 프로퍼티값을 동일하게 적용한다.
+padding을 사용할 수 없는 경우, 요소의 height와 line-height 프로퍼티값을 동일하게 적용한다. 단 이 방법은 행간이 지나치게 넓어지거나 Click Dead Zone 이슈가 발생하는 등 여러 줄의 텍스트에는 사용할 수 없다.
+2.1.2 Multiple lines
+여러 줄의 텍스트의 경우, padding-top과 padding-bottom 프로퍼티값을 동일하게 적용하는 방법도 가능하다.
+또 다른 방법으로 vertical-align 프로퍼티를 사용한 방법도 가능하다. 이 방법은 table 속성을 사용하여야 한다.
+2.1.3 Flexbox
+vertical-align 프로퍼티를 사용하는 방법은 table 프로퍼티를 사용하여야 하므로 번거로울 수 있다. 좀 더 간단한 방법은 flexbox를 사용하는 것이다.
+2.2 block 요소
+2.2.1 요소의 높이가 고정되어 있는 경우
+부모 요소를 기준으로 절대 위치를 지정한다.
+2.2.2 요소의 높이가 불확정 상태의 경우
+부모 요소를 기준으로 절대 위치를 지정한다.
+2.2.3 Flexbox
+부모 요소에 Flexbox layout을 지정한다.
+3. 수평/수직 정렬(Horizontal & Vertical Align)
+요소의 너비와 높이가 고정되어 있는 경우, 요소의 너비와 높이가 불확정 상태의 경우 모두 사용 가능한 방법이다
+Flexbox를 사용한 방법은 아래와 같다.
+
+22. image 요소 아래에 패딩된 여분의 공간 제거하기
+컨테이너 요소로 img 요소를 래핑하면 img 요소 아래에 의도하지 않은 여분의 공간이 패딩된다.
+이 문제가 발생하는 이유에 대해 살펴보자. 단순히 문제 해결 방법을 외우지 않고 문제가 발생하는 이유를 이해하면 문제 해결 방법을 기억하는 것에 도움이 된다.
+image 요소는 inline 요소이다. 다시 말해 image 요소는 텍스트로 취급된다. 브라우저는 요소 내의 텍스트를 렌더링할 때 나름의 방식이 있는데 이를 이해하려면 타이포그래피(Typography)에 대해 어느 정도 이해해야 한
+image 요소는 inline 요소이며 텍스트로 취급된다고 하였다. 이것은 image 요소 또한 위 그림과 같이 타이포그래피를 따른다는 것을 의미한다. 정말 그런지 텍스트와 image 요소를 같이 배치해 확인해보자
+위 그림과 같이 image 요소에도 디센더가 적용되어 여분의 공간이 발생한다. 원인을 알았으니 이 문제에 대한 해결 방법에 대해 생각해보자.
+첫번째, image 요소를 블록 요소로 전환하면 더 이상 텍스트로 취급되지 않는다.
+하지만 이 방법은 image 요소를 블록 요소로 전환할 수 없는 레이아웃에서는 사용할 수 없다.
+두번째, inline 요소에 사용할 수 있는 vertical-align 프로퍼티를 사용하는 방법이 있다. vertical-align 프로퍼티의 기본값은 baseline인데 이를 변경하여 이미지 표시 위치를 조정하는 것이다.
