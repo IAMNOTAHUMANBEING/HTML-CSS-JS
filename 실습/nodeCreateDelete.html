@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드 추가/삭제</title>
+    <link rel="stylesheet" href="/nodeCreateDelete.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>메모장</h1>
+        <p>메모할 내용을 입력하세요. 메모한 내용을 클릭하면 삭제 됩니다.</p>
+        <form action="">
+            <input type="text" id="subject" autofocus>
+            <button onclick="newRegister(); return false;">추가</button>
+        </form>
+        <hr>
+        <ul id="itemList"></ul>
+    </div>
+
+    <script>
+        function newRegister() {
+            //생성
+            let newItem = document.createElement("li");
+            let subject = document.querySelector('#subject');
+            let newText = document.createTextNode(subject.value);
+            newItem.appendChild(newText);
+
+            let itemList = document.querySelector('#itemList');
+            itemList.insertBefore(newItem, itemList.childNodes[0]);
+
+            subject.value = ""; // 초기화
+
+            //삭제
+            let item = document.querySelectorAll("li")[0];
+
+            item.addEventListener("click", function () {
+                if (this.parentNode) {
+                    this.parentNode.removeChild(this);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

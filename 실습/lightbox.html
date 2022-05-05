@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/lightbox.css">
+    <title>라이트박스</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="image/01.jpg" class="pic">
+        <img src="image/02.jpg" class="pic">
+        <img src="image/03.jpg" class="pic">
+        <img src="image/04.jpg" class="pic">
+    </div>
+
+    <div id="lightbox">
+        <img src="image/01.jpg" alt="" id="lightboxImage">
+    </div>
+
+    <script>
+        let pics = document.getElementsByClassName("pic");
+        let lightbox = document.getElementById("lightbox");
+        let lightboxImage = document.getElementById("lightboxImage");
+
+        for (i = 0; i < pics.length; i++) {
+            pics[i].addEventListener("click", showLigtbox);
+        }
+
+        function showLigtbox() {
+            let bigLocation = this.getAttribute("src");
+            lightboxImage.setAttribute("src", bigLocation);
+            lightbox.style.display = "block";
+        }
+
+        lightbox.onclick = function () {
+            lightbox.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

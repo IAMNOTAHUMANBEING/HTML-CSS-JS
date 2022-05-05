@@ -1,0 +1,25 @@
+body {
+    background: url(image/01.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        background: url(image/02.JPG) no-repeat fixed;
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background: url(image/03.JPG) no-repeat fixed;
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        background: url(image/04.JPG) no-repeat fixed;
+        background-size: cover;
+    }
+}

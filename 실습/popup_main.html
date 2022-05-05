@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업메인</title>
+</head>
+
+<body>
+    <h1>메인 창 입니다.</h1>
+
+    <script>
+        function openCenter(doc, win, w, h) {
+            let left = (screen.availWidth - w) / 2;
+            let top = (screen.availHeight - h) / 2;
+            let opt = "left=" + left + ", top=" + top + ", width=" + w + ", height=" + h;
+            popup = window.open(doc, win, opt);
+            popup.creator = self;
+        }
+        openCenter("popup.html", "popup", 750, 600);
+    </script>
+</body>
+
+</html>
